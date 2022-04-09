@@ -40,7 +40,7 @@ export const Navbar = () => {
                     className="navbar-brand" 
                     to="/" 
                 >
-                    Asociaciones
+                    Heroes
                 </Link>
                 <button className="navbar-toggler" type="button" onClick={() => setToggle(toggle => !toggle)}>
                     <span className="navbar-toggler-icon"></span>
