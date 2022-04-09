@@ -1,7 +1,9 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 import { AuthContext } from '../../auth/authContext';
 import { Link, NavLink, useNavigate } from 'react-router-dom'
 import { types } from '../../types/types';
+import { Collapse } from 'bootstrap';
+
 
 export const Navbar = () => {
 
@@ -20,59 +22,69 @@ export const Navbar = () => {
         })
     };
 
+    const [toggle, setToggle] = useState(false);
+    useEffect(() => {
+        const myCollapse = document.getElementById('navbarHeroesContent');
+        let bsCollapse = new Collapse(myCollapse, {toggle: false});
+        toggle ? bsCollapse.show() : bsCollapse.hide();
+    })
+
     // Como el navbar es un componente que se renderiza en todas las rutas, se usa el contexto de autenticacion para obtener el usuario
     const authContext = useContext(AuthContext);  // se obtiene el contexto de autenticacion
     const { user } = authContext;  // se obtiene el usuario del contexto
     return (
-        <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
-            
-            <Link 
-                className="navbar-brand" 
-                to="/" 
-            >
-                Asociaciones
-            </Link>
+        <>
+        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div className="container-fluid">
+                <Link 
+                    className="navbar-brand" 
+                    to="/" 
+                >
+                    Asociaciones
+                </Link>
+                <button className="navbar-toggler" type="button" onClick={() => setToggle(toggle => !toggle)}>
+                    <span className="navbar-toggler-icon"></span>
+                </button>
+                <div className="collapse navbar-collapse" id="navbarHeroesContent">
+                    <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+                        <NavLink 
+                                className={ ({ isActive }) => 'nav-item nav-link ' + (isActive ? 'active' : '') } 
+                                to="/marvel"
+                            >
+                                Marvel
+                            </NavLink>
 
-            <div className="navbar-collapse">
-                <div className="navbar-nav">
+                            <NavLink 
+                                className={ ({ isActive }) => 'nav-item nav-link ' + (isActive ? 'active' : '') } 
+                                to="/dc"
+                            >
+                                DC
+                            </NavLink>
 
-                    <NavLink 
-                        className={ ({ isActive }) => 'nav-item nav-link ' + (isActive ? 'active' : '') } 
-                        to="/marvel"
-                    >
-                        Marvel
-                    </NavLink>
+                            <NavLink 
+                                className={ ({ isActive }) => 'nav-item nav-link ' + (isActive ? 'active' : '') } 
+                                to="/search"
+                            >
+                                Search
+                        </NavLink>
+                    </ul>
+                    <div className="navbar-collapse collapse w-100 order-3 dual-collapse2 d-flex justify-content-end">
+                        <ul className="navbar-nav ml-auto">
+                            <span className='nav-item nav-link text-info'>
+                                { user.name }
+                            </span>
 
-                    <NavLink 
-                        className={ ({ isActive }) => 'nav-item nav-link ' + (isActive ? 'active' : '') } 
-                        to="/dc"
-                    >
-                        DC
-                    </NavLink>
-
-                    <NavLink 
-                        className={ ({ isActive }) => 'nav-item nav-link ' + (isActive ? 'active' : '') } 
-                        to="/search"
-                    >
-                        Search
-                    </NavLink>
+                            <button 
+                                className="nav-item nav-link btn" 
+                                onClick={ handleLogout }
+                            >
+                                Logout
+                            </button>
+                        </ul>
+                    </div>
                 </div>
             </div>
-
-            <div className="navbar-collapse collapse w-100 order-3 dual-collapse2 d-flex justify-content-end">
-                <ul className="navbar-nav ml-auto">
-                    <span className='nav-item nav-link text-info'>
-                        { user.name }
-                    </span>
-
-                    <button 
-                        className="nav-item nav-link btn" 
-                        onClick={ handleLogout }
-                    >
-                        Logout
-                    </button>
-                </ul>
-            </div>
         </nav>
+        </>
     )
 }

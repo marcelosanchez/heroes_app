@@ -34,7 +34,7 @@ export const SearchScreen = () => {
 
             <div className='row'>
 
-                <div className='col-5'>
+                <div className='col-lg-5'>
                     <h4>Search</h4>
                     <hr/>
                     <form onSubmit={ handleSearch }>
@@ -57,7 +57,7 @@ export const SearchScreen = () => {
                     </form>
                 </div>
 
-                <div className='col-7'>
+                <div className='col-lg-7'>
                     <h4>Results</h4>
                     <hr/>
 
