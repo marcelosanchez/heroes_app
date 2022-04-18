@@ -1,7 +1,7 @@
 self.__precacheManifest = [
   {
-    "revision": "d318ec5c5b5b76a4d931",
-    "url": "/heroes_app/static/js/main.d318ec5c.chunk.js"
+    "revision": "6bd819e16be938c4bf7a",
+    "url": "/heroes_app/static/js/main.6bd819e1.chunk.js"
   },
   {
     "revision": "2e4d4725df085e81d4d2",
@@ -92,7 +92,7 @@ self.__precacheManifest = [
     "url": "/heroes_app/static/media/marvel-wolverine.a1a41d9a.jpg"
   },
   {
-    "revision": "dc455c274d3649826a84863b4498750f",
+    "revision": "1e86d912e66b696d7ade56f257d40bfb",
     "url": "/heroes_app/index.html"
   }
 ];

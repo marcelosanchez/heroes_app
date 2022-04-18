@@ -34,7 +34,7 @@ export const Navbar = () => {
     const { user } = authContext;  // se obtiene el usuario del contexto
     return (
         <>
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav className="navbar navbar-expand-lg navbar-dark bg-success">
             <div className="container-fluid">
                 <Link 
                     className="navbar-brand" 
@@ -70,7 +70,7 @@ export const Navbar = () => {
                     </ul>
                     <div className="navbar-collapse collapse w-100 order-3 dual-collapse2 d-flex justify-content-end">
                         <ul className="navbar-nav ml-auto">
-                            <span className='nav-item nav-link text-info'>
+                            <span className='nav-item nav-link active font-weight-bold'>
                                 { user.name }
                             </span>
 
