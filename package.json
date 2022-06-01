@@ -1,6 +1,7 @@
 {
   "name": "heroes-app",
-  "homepage": "https://marcelosanchez.github.io/heroes_app/",
+  "homepage": "https://super-heroes-app.vercel.app/",
+  "homepage_old": "https://marcelosanchez.github.io/heroes_app/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
