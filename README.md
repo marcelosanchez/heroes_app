@@ -20,7 +20,7 @@
   <p align="center">
     An awesome app to search Marvel and DC heroes, built with ReactJS.
     <br />
-    <a href="https://marcelosanchez.github.io/heroes_app/">View Demo</a>
+    <a href="https://heroes-app-ms.vercel.app/">View Demo</a>
     ·
     <a href="https://github.com/marcelosanchez/heroes_app/issues">Report Bug</a>
     ·
